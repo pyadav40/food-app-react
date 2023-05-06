@@ -1,5 +1,4 @@
 import React from 'react'
-import { memo } from 'react'
 import { Paper,ImageList,Typography, ImageListItem, Button } from '@mui/material'
 import { orange } from '@mui/material/colors'
 const ReceipeItem = (props) => {

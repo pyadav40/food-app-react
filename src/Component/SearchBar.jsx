@@ -17,7 +17,7 @@ const SearchBar = (props) => {
     useEffect(()=>{
         updateSearch('');
         setAPICallSuccess(false);
-    },[APICallSuccess])
+    },[APICallSuccess, setAPICallSuccess])
     console.log('----Search Component---')
   return (
     <>

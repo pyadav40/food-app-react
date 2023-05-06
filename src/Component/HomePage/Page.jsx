@@ -2,7 +2,7 @@ import React, { useEffect,useContext, useReducer, useState, useCallback, useMemo
 import SearchBar from '../SearchBar'
 import ReceipeItem from '../Receipe/ReceipeItem';
 import { Grid, TextField, Typography,Box } from '@mui/material'
-import { lightGreen, cyan,grey } from '@mui/material/colors';
+import {grey } from '@mui/material/colors';
 
 import FavouriteRecipe from '../Receipe/FavouriteRecipe';
 import { themeContext } from '../../App';
@@ -81,16 +81,7 @@ const Page = () => {
     localStorage.setItem("favourites", JSON.stringify(cpyremfav))
   }
 
-    const reactRender=useCallback(()=>{
-      if (receips && receips.length > 0)
-      {
-        return (
-          receips.map((item,i)=>
-            <Grid key={i} item sm={6} md={4}>
-              <ReceipeItem addfavourites={() => addfavourites(item)} id={item.id} title={item.title} image={item.image} /></Grid>) 
-        )
-      }
-    },[receips,addfavourites])
+ 
   ///set favoruite data in local storage
   useEffect(() => {
     const extractfavlocalStorage = JSON.parse(localStorage.getItem('favourites'))
