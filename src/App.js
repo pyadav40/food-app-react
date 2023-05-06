@@ -1,9 +1,8 @@
  
 import Page from './Component/HomePage/Page';
 import { useState,createContext } from 'react';
-import {Container, Box} from '@mui/material';
+import {Container} from '@mui/material';
 import ThemeSelector from './ThemeButton/ThemeSelector';
-import { FamilyRestroomOutlined } from '@mui/icons-material';
 // sx={{ width:"100vw", height:'100%', backgroundColor:"primary.dark"}}
 export const themeContext= createContext(null)
 const style={dark:{backgroundColor:'black',color:'white'}, light:{backgroundColor:'white',color:'black'}}
