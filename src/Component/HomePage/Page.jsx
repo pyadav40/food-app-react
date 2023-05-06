@@ -84,11 +84,11 @@ const Page = () => {
  
   ///set favoruite data in local storage
   useEffect(() => {
-    const extractfavlocalStorage = JSON.parse(localStorage.getItem('favourites'))
+    const extractfavlocalStorage = JSON.parse(localStorage.getItem('favourites'))||[];
     setfavourites(extractfavlocalStorage)
   }, [APICallSuccess,setAPICallSuccess])
 
-  const filterFavourite = favourites.filter(item => item.title.toLowerCase().includes(favouriteState.filterValue))
+  const filterFavourite = favourites && favourites.length>0?favourites.filter(item => item.title.toLowerCase().includes(favouriteState.filterValue)):[]
   return (
     <Grid container style={{ gap: 15  }}>
       <SearchBar APICallSuccess={APICallSuccess} setAPICallSuccess={setAPICallSuccess} getSearchData={getSearchData} />
